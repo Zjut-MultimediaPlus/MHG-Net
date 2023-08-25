@@ -36,8 +36,9 @@ filetree
 
 请将config文件中的所有存放数据/模型的路径地址按照自己的存储路径进行更改
 数据存储链接为：
-链接: https://pan.baidu.com/s/18Ta5wu-z4x0bhI3237GRuA 提取码: 1234 复制这段内容后打开百度网盘手机App，操作更方便哦
-./test_156对应Config.py中的
+https://pan.baidu.com/s/18Ta5wu-z4x0bhI3237GRuA 提取码: 1234 
+test_156文件夹数据对应Config.py中的predict_npy_path156
+test_diff文件夹数据对应Config.py中predict_npy_path_diff
 
 
 ### 作者
