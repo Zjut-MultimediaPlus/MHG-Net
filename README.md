@@ -6,10 +6,10 @@ Multi-Modal Hybrid Guided Network for Tropical Cyclone Intensity and Size Estima
 
 <!-- PROJECT SHIELDS -->
  
-## 目录
+## Catalogue
 
-- [项目的架构](#文件目录说明)
-- [项目运行](#上手指南)
+- [Schema of the project](#description of file directory)
+- [Operation of the project](#Getting started guide)
 
 [//]: # (- [贡献者]&#40;#贡献者&#41;)
 
@@ -25,22 +25,23 @@ Multi-Modal Hybrid Guided Network for Tropical Cyclone Intensity and Size Estima
 
 ```
 filetree 
-├── README.md           #说明
-├── epoch_375.pth       #训练好的模型
-├── Config.py           #配置文件
-├── MHG_Dataset.py      #数据加载
-├── Test_Model.py       #测试模型
+├── README.md           #Instructions
+├── epoch_375.pth       #Trained model
+├── Config.py           #configuration files
+├── MHG_Dataset.py      #Dataloader
+├── Test_Model.py       #Code for testing the model
 ```
 
 ### 上手指南
 
-请将config文件中的所有存放数据/模型的路径地址按照自己的存储路径进行更改
-数据存储链接为：
-https://pan.baidu.com/s/18Ta5wu-z4x0bhI3237GRuA 提取码: 1234  
+Please change the path address of all stored data&models in the config.py according to your own storage path.
+Test Datasets are stored in：
+https://pan.baidu.com/s/18Ta5wu-z4x0bhI3237GRuA  
+Extraction code: 1234  
 
-test_156文件夹数据对应Config.py中的predict_npy_path156  
+Data in test_156/ corresponds to predict_npy_path156 in Config.py  
 
-test_diff文件夹数据对应Config.py中predict_npy_path_diff
+Data in test_diff/ corresponds to predict_npy_path_diff in Config.py
 
 
 ### 作者
