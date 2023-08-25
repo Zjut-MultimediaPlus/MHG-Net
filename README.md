@@ -20,7 +20,7 @@ Multi-Modal Hybrid Guided Network for Tropical Cyclone Intensity and Size Estima
 
 [//]: # (- [鸣谢]&#40;#鸣谢&#41;)
 
-### Description of file directory
+### Description-of-file-directory
 
 ```
 filetree 
@@ -31,7 +31,7 @@ filetree
 ├── Test_Model.py       #Code for testing the model
 ```
 
-### Getting started guide
+### Getting-started-guide
 
 Please change the path address of all stored data&models in the config.py according to your own storage path.
 Test Datasets are stored in：
