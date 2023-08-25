@@ -30,13 +30,14 @@ filetree
 ├── Config.py           #配置文件
 ├── MHG_Dataset.py      #数据加载
 ├── Test_Model.py       #测试模型
-├── /test_156/          #测试数据集文件夹1
-├── /test_diff/         #测试数据集文件夹2
 ```
 
 ### 上手指南
 
 请将config文件中的所有存放数据/模型的路径地址按照自己的存储路径进行更改
+数据存储链接为：
+链接: https://pan.baidu.com/s/18Ta5wu-z4x0bhI3237GRuA 提取码: 1234 复制这段内容后打开百度网盘手机App，操作更方便哦
+./test_156对应Config.py中的
 
 
 ### 作者
