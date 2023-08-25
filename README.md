@@ -7,8 +7,8 @@ Multi-Modal Hybrid Guided Network for Tropical Cyclone Intensity and Size Estima
 <!-- PROJECT SHIELDS -->
  
 ## Catalogue
-- [Schema of the project](#Descriptionoffiledirectory)
-- [Operation of the project](#GettingStarted)
+- [Schema of the project](#Description-of-file-directory)
+- [Operation of the project](#Getting-Started-guide)
 
 [//]: # (- [贡献者]&#40;#贡献者&#41;)
 
