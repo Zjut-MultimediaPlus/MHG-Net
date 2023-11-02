@@ -78,7 +78,7 @@ def test_npys(dataset):
             wind = wind[:, 0]
             RMW = RMW[:, 0]
 
-            # 标签和估计结果反归一化后比较误差
+            # Comparison error between label and estimated result after denormalization.
             wind_label_re = wind_label.cpu().detach().numpy() * (170 - 19) + 19
             wind_re = wind.cpu().detach().numpy() * (170 - 19) + 19
             wind_error = wind_error + np.sum(np.abs(wind_re - wind_label_re))
