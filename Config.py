@@ -1,6 +1,6 @@
 # train
 epochs = 375
-batch_size = 1
+batch_size = 128
 device = 'cuda:3'  # cpu or 'cuda:0'
 
 train_npy_path251 = '/MHG-Net/train_156/'
