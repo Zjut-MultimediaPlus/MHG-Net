@@ -100,8 +100,8 @@ def test_npys(dataset):
                 RMW_label_list.append(RMW_label_re[i])
                 wind_MAE_list_mine.append(np.abs(wind_re - wind_label_re)[i])
                 RMW_MAE_list_mine.append(np.abs(RMW_re - RMW_label_re)[i])
-                print("wind_label={}, 估计结果：intensity={}".format(wind_label_re[i], wind_re[i]))
-                print("RMW_label={}, 估计结果：RMW={}".format(RMW_label_re[i], RMW_re[i]))
+                print("wind_label={}, estimatioon result：intensity={}".format(wind_label_re[i], wind_re[i]))
+                print("RMW_label={}, estimatioon result：RMW={}".format(RMW_label_re[i], RMW_re[i]))
                 
     return wind_error, RMW_error, \
            wind_bias_sum, wind_RMSE_sum, RMW_bias_sum, RMW_RMSE_sum, \
@@ -130,11 +130,11 @@ if __name__ == '__main__':
     wind_RMSE = math.sqrt(wind_RMSE_sum / test_num)
     RMW_bias = RMW_bias_sum / test_num
     RMW_RMSE = math.sqrt(RMW_RMSE_sum / test_num)
-    print("强度估计值的平均误差={}".format(wind_error))
-    print("风圈RMW估计值的平均误差={}".format(RMW_error))
-    print("强度估计的bias={}".format(wind_bias))
-    print("风圈RMW估计的bias={}".format(RMW_bias))
+    print("Average error of intensity estimation={}".format(wind_error))
+    print("Average error of RMW estimation={}".format(RMW_error))
+    print("bias of intensity={}".format(wind_bias))
+    print("bias of RMW={}".format(RMW_bias))
     
-    print("强度估计的平均RMSE={}".format(wind_RMSE))
-    print("风圈RMW估计的RMSE={}".format(RMW_RMSE))
+    print("RMSE of intensity estimation={}".format(wind_RMSE))
+    print("RMSE of RMW estimation={}".format(RMW_RMSE))
 
