@@ -5,13 +5,6 @@ import os
 from openpyxl.reader.excel import load_workbook
 from tqdm import tqdm
 import Config as config
-'''
-data_npy: 
-pre:上一时刻强度等级
-wind: 数值
-size: 数值
-Dataset return : sample = {'pre': pre, 'npy': npy, 'wind': wind, 'RMW': RMW, 'R34': R34, 'pressure': pressure}
-'''
 
 def default_loader(path):
     raw_data = np.load(path, allow_pickle=True)
@@ -19,26 +12,15 @@ def default_loader(path):
 
     return tensor_data
 
-# def crop_npy(raw_data):
-#     re_crop_data = np.zeros(30 * 30 * 4).reshape(4, 30, 30)
-#     for channel in range(0, raw_data.shape[0]):
-#         re_crop_data[channel] = raw_data[channel][110:140, 110:140]
-#         # TODO: 这里要裁掉，能不能直接外面裁好，然后这里直接读，就不裁了
-#
-#     # tensor_data = torch.from_numpy(raw_data)
-#     recrop_tensor_data = torch.from_numpy(re_crop_data)
-#     recrop_tensor_data = recrop_tensor_data.type(torch.FloatTensor)
-#     return recrop_tensor_data
-
 class Dataset():
-    def __init__(self, data_root_path_251, data_root_path_diff, data_transforms=None, data_format='npy'):
+    def __init__(self, data_root_path_156, data_root_path_diff, data_transforms=None, data_format='npy'):
 
         self.data_transforms = data_transforms
         self.data_format = data_format
-        self.npy_251_paths = data_root_path_251
+        self.npy_156_paths = data_root_path_156
         self.npy_diff_paths = data_root_path_diff
 
-        self.npys_251 = []
+        self.npys_156 = []
         self.npys_diff = []
         self.winds = []
         self.RMWs = []
@@ -49,7 +31,7 @@ class Dataset():
         self.lons = []
         self.ts = []
 
-        for npy_file in os.listdir(data_root_path_251):
+        for npy_file in os.listdir(data_root_path_156):
             filename = npy_file.split("_")
             lat = float(filename[0])
             lon = float(filename[1])
@@ -60,7 +42,7 @@ class Dataset():
             RMW = float(filename[6])
             R34 = float(filename[7])
 
-            self.npys_251.append(data_root_path_251 + npy_file)
+            self.npys_156.append(data_root_path_156 + npy_file)
             self.npys_diff.append(data_root_path_diff + npy_file)
 
             self.winds.append(wind)
@@ -90,7 +72,7 @@ class Dataset():
         # print("pressure max = {}".format(pressure_max))
         # print("pressure min = {}".format(pressure_min))
 
-        # 标签归一化
+        # Label normalization
         for i in range(len(self.winds)):
             self.winds[i] = (self.winds[i] - 19) / (170 - 19)
             self.RMWs[i] = (self.RMWs[i] - 5) / (200 - 5)
@@ -102,18 +84,18 @@ class Dataset():
 
 
     def __len__(self):
-        return len(self.npys_251)
+        return len(self.npys_156)
 
     def __getitem__(self, index):
 
-        npy_file_path_251 = self.npys_251[index]
-        npy_251 = default_loader(npy_file_path_251)
+        npy_file_path_156 = self.npys_156[index]
+        npy_156 = default_loader(npy_file_path_156)
 
         npy_file_path_diff = self.npys_diff[index]
         npy_diff = default_loader(npy_file_path_diff)
 
         if self.data_transforms is not None:
-            npy_251 = self.data_transforms(npy_251)
+            npy_156 = self.data_transforms(npy_156)
             npy_diff = self.data_transforms(npy_diff)
 
         wind = self.winds[index]
@@ -125,15 +107,7 @@ class Dataset():
         lon = self.lons[index]
         t = self.ts[index]
 
-        sample = {'lat': lat, 'lon': lon, 'occur_t': t, 'pre': pre, 'npy': npy_251, 'diff_npy': npy_diff,
+        sample = {'lat': lat, 'lon': lon, 'occur_t': t, 'pre': pre, 'npy': npy_156, 'diff_npy': npy_diff,
                   'RMW': RMW, 'wind': wind, 'pressure': pressure}
 
         return sample
-
-# 检查数据
-# print("trainset中的标签最值：")
-# train_dataset = Dataset(config.train_npy_path251, config.train_npy_path_diff, None, config.data_format)
-# print("valset中的标签最值：")
-# valid_dataset = Dataset(config.valid_npy_path251, config.valid_npy_path_diff, None, config.data_format)
-# print("testset中的标签最值：")
-# test_dataset = Dataset(config.predict_npy_path251, config.predict_npy_path_diff, None, config.data_format)
