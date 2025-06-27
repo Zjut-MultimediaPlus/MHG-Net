@@ -31,19 +31,9 @@ filetree
 ├── Train.py & Test.py  #Code for training and testing the model
 ```
 
-### Getting-started-guide
-
-Please change the path address of all stored data&models in the config.py according to your own storage path.
-Test Datasets are stored in：
-https://pan.baidu.com/s/18Ta5wu-z4x0bhI3237GRuA  
-Extraction code: 1234  
-Data in test_156/ corresponds to predict_npy_path156 in Config.py  
-
-Data in test_diff/ corresponds to predict_npy_path_diff in Config.py
-
 
 ### Author
 
 yht (zjut)
 
-email:329769800@qq.comhantingyan@zjut.edu.cn
+email:hantingyan@zjut.edu.cn
