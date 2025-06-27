@@ -27,7 +27,7 @@ filetree
 ├── README.md           #Instructions
 ├── Config.py           #configuration files
 ├── Dataset.py          #Dataloader
-├── MHG_PPNet.py          #Dataloader
+├── MHG_PPNet.py        #Model
 ├── Train.py & Test.py  #Code for training and testing the model
 ```
 
