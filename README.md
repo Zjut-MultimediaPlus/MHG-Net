@@ -2,7 +2,7 @@
 
 # MHG-Net
 
-Multi-Modal Hybrid Guided Network for Tropical Cyclone Intensity and Size Estimation
+Estimating Tropical Cyclones with Analysis on Physical Attribution and Physical Correlations Using a Multi-Modal Hybrid Guided Network (JGR Submit)
 
 <!-- PROJECT SHIELDS -->
  
@@ -25,10 +25,10 @@ Multi-Modal Hybrid Guided Network for Tropical Cyclone Intensity and Size Estima
 ```
 filetree 
 ├── README.md           #Instructions
-├── epoch_375.pth       #Trained model
 ├── Config.py           #configuration files
-├── MHG_Dataset.py      #Dataloader
-├── Test_Model.py       #Code for testing the model
+├── Dataset.py          #Dataloader
+├── MHG_PPNet.py          #Dataloader
+├── Train.py & Test.py  #Code for training and testing the model
 ```
 
 ### Getting-started-guide
@@ -46,4 +46,4 @@ Data in test_diff/ corresponds to predict_npy_path_diff in Config.py
 
 yht (zjut)
 
-email:329769800@qq.com
+email:329769800@qq.comhantingyan@zjut.edu.cn
