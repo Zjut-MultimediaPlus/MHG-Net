@@ -2,7 +2,7 @@
 
 # MHG-Net
 
-Estimating Tropical Cyclones with Analysis on Physical Attribution and Physical Correlations Using a Multi-Modal Hybrid Guided Network (JGR Submit)
+Estimating Tropical Cyclone Maximum Wind Speed and Radius Using a Multi-Modal Hybrid Guided Network (JGR Submit)
 
 <!-- PROJECT SHIELDS -->
  
